@@ -56,7 +56,7 @@ cd aurudu_app
 
 **Nadun Daluwatta**  
 📧 nsdaluwatta@gmail.com  
-🌐 [www.nadundaluwatta.me](https://www.nadun.live)
+🌐 [www.nsdaluwatta.live](https://www.nadun.live)
 
 ---
 
