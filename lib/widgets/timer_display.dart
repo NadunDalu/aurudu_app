@@ -58,7 +58,7 @@ class _TimerDisplayState extends State<TimerDisplay> {
           style: const TextStyle(
             fontSize: 30,
             fontWeight: FontWeight.bold,
-            color: Color(0xFFBB0404),
+            color: Color(0xFFD4AF37),
             fontFamily: 'Gafata-Regular',
           ),
         ),
@@ -68,7 +68,7 @@ class _TimerDisplayState extends State<TimerDisplay> {
           style: TextStyle(
             fontSize: 14,
             fontFamily: 'TharuDigitalNikini',
-            color: Color(0xFFBB0404),
+            color: Color(0xFFD4AF37),
           ),
         ),
       ],

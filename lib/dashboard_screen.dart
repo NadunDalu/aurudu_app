@@ -59,7 +59,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
         children: [
           Positioned.fill(
             child: Image.asset(
-              'assets/images/background.jpg',
+              'assets/images/bg.png',
               fit: BoxFit.cover,
             ),
           ),
@@ -79,7 +79,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                             style: TextStyle(
                               fontSize: 26,
                               fontFamily: 'TharuDigitalNikini',
-                              color: Color(0xFFBB0404),
+                              color: Color(0xFFD4AF37), // Gold for background
                             ),
                             textAlign: TextAlign.center,
                           ),
@@ -130,7 +130,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                              style: const TextStyle(
                                                fontSize: 20,
                                                fontFamily: 'TharuDigitalNikini',
-                                               color: Color(0xFFBB0404),
+                                               color: Color(0xFF5C0000), // Deep maroon on card
                                              ),
                                              textAlign: TextAlign.center,
                                            ),
@@ -173,7 +173,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                   'kele;a iSÜgqj 2025',
                                   style: TextStyle(
                                     fontSize: 22,
-                                    color: Color(0xFFBB0404),
+                                    color: Color(0xFF5C0000),
                                     fontFamily: 'TharuDigitalNikini',
                                   ),
                                   textAlign: TextAlign.center,
@@ -208,7 +208,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                   'ÈYdj n,d .kak\'',
                                   style: TextStyle(
                                     fontSize: 22,
-                                    color: Color(0xFFBB0404),
+                                    color: Color(0xFF5C0000),
                                     fontFamily: 'TharuDigitalNikini',
                                   ),
                                   textAlign: TextAlign.center,
@@ -243,7 +243,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                   'wjqreÿ .S;',
                                   style: TextStyle(
                                     fontSize: 22,
-                                    color: Color(0xFFBB0404),
+                                    color: Color(0xFF5C0000),
                                     fontFamily: 'TharuDigitalNikini',
                                   ),
                                   textAlign: TextAlign.center,
@@ -278,7 +278,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                   'woyia yd fhdackd',
                                   style: TextStyle(
                                     fontSize: 22,
-                                    color: Color(0xFFBB0404),
+                                    color: Color(0xFF5C0000),
                                     fontFamily: 'TharuDigitalNikini',
                                   ),
                                   textAlign: TextAlign.center,
@@ -295,7 +295,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                             'iqn w¨;a wjqreoaola fõjd æ',
                             style: TextStyle(
                               fontSize: 24,
-                              color: Color(0xFFBB0404),
+                              color: Color(0xFFD4AF37), // Gold
                               fontFamily: 'TharuDigitalNikini',
                             ),
                             textAlign: TextAlign.center,
@@ -319,16 +319,16 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  color: Color(0xFFBB0404),
+                                  color: Colors.white70,
                                 ),
                               ),
                               const Text(
                                 'nadundaluwatta26@gmail.com',
-                                style: TextStyle(color: Color(0xFFBB0404)),
+                                style: TextStyle(color: Colors.white70),
                               ),
                               const Text(
                                 'www.nadundaluwatta.me',
-                                style: TextStyle(color: Color(0xFFBB0404)),
+                                style: TextStyle(color: Colors.white70),
                               ),
                             ],
                           ),
@@ -350,11 +350,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
       margin: const EdgeInsets.symmetric(vertical: 10),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: const Color(0xFFFAE3C3),
+        color: const Color(0xFFFDF6E3).withAlpha((0.95 * 255).toInt()), // Parchment color with slight transparency
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: const Color(0xFFBB0404), width: 2),
+        border: Border.all(color: const Color(0xFFD4AF37), width: 1.5), // Subtle gold border
         boxShadow: const [
-          BoxShadow(color: Colors.black26, blurRadius: 5, offset: Offset(2, 4)),
+          BoxShadow(color: Colors.black45, blurRadius: 8, offset: Offset(2, 6)), // Softer, deeper shadow
         ],
       ),
       child: child,

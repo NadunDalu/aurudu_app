@@ -12,9 +12,9 @@ class RoundedWhiteButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return OutlinedButton(
       style: OutlinedButton.styleFrom(
-        backgroundColor: Colors.white,
+        backgroundColor: const Color(0xFFFDF6E3),
         side: const BorderSide(
-          color: Color(0xFFBB0404), // Red border
+          color: Color(0xFF5C0000), // Deep Maroon border
           width: 2,
         ),
         padding: const EdgeInsets.symmetric(
@@ -31,7 +31,7 @@ class RoundedWhiteButton extends StatelessWidget {
         style: TextStyle(
           fontSize: 18,
           fontFamily: 'TharuDigitalNikini',
-          color: Color(0xFFBB0404), // Red label
+          color: Color(0xFF5C0000), // Deep Maroon label
         ),
       ),
     );

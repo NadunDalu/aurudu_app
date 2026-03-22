@@ -23,7 +23,7 @@ class AboutUsScreen extends StatelessWidget {
         width: double.infinity,
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/background.jpg'),
+            image: AssetImage('assets/images/bg.png'),
             fit: BoxFit.cover,
           ),
         ),
@@ -38,7 +38,7 @@ class AboutUsScreen extends StatelessWidget {
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
                 fontFamily: 'TharuDigitalNikini',
-                color: Color(0xFFBB0404),
+                color: Color(0xFFD4AF37),
               ),
             ),
             const SizedBox(height: 16),
@@ -47,7 +47,7 @@ class AboutUsScreen extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 16,
-                color: Colors.black87,
+                color: Colors.white,
               ),
             ),
             const SizedBox(height: 30),
@@ -56,7 +56,7 @@ class AboutUsScreen extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: _launchFeedbackForm,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFFBB0404),
+                  backgroundColor: const Color(0xFF5C0000),
                   padding: const EdgeInsets.symmetric(vertical: 10),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),
@@ -67,7 +67,7 @@ class AboutUsScreen extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 18,
                     fontFamily: 'TharuDigitalNikini',
-                    color: Colors.white,
+                    color: Color(0xFFD4AF37),
                   ),
                 ),
               ),
@@ -82,16 +82,16 @@ class AboutUsScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: Color(0xFFBB0404),
+                    color: Colors.white70,
                   ),
                 ),
                 const Text(
                   'nadundaluwatta26@gmail.com',
-                  style: TextStyle(color: Color(0xFFBB0404)),
+                  style: TextStyle(color: Colors.white70),
                 ),
                 const Text(
                   'www.nadundaluwatta.me',
-                  style: TextStyle(color: Color(0xFFBB0404)),
+                  style: TextStyle(color: Colors.white70),
                 ),
               ],
             ),

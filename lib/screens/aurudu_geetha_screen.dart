@@ -173,7 +173,7 @@ class _AuruduGeethaScreenState extends State<AuruduGeethaScreen> {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/background.jpg'),
+            image: AssetImage('assets/images/bg.png'),
             fit: BoxFit.cover,
           ),
         ),
@@ -196,7 +196,7 @@ class _AuruduGeethaScreenState extends State<AuruduGeethaScreen> {
                   if (!_isPlayerReady)
                     const LinearProgressIndicator(
                       backgroundColor: Colors.white,
-                      color: Color(0xFFBB0404),
+                      color: Color(0xFFD4AF37),
                       minHeight: 4,
                     ),
                 ],
@@ -225,14 +225,14 @@ class _AuruduGeethaScreenState extends State<AuruduGeethaScreen> {
                                   textAlign: TextAlign.center,
                                   style: const TextStyle(
                                     fontSize: 18,
-                                    color: Color(0xFFBB0404),
+                                    color: Color(0xFF5C0000),
                                     fontFamily: 'TharuDigitalNikini',
                                   ),
                                 ),
                               ),
                               Icon(
                                 isPlaying ? Icons.pause_circle_filled : Icons.play_circle_fill,
-                                color: const Color(0xFFBB0404),
+                                color: const Color(0xFF5C0000),
                                 size: 30,
                               ),
                             ],
@@ -241,8 +241,8 @@ class _AuruduGeethaScreenState extends State<AuruduGeethaScreen> {
                             ProgressBar(
                               controller: _playerController!,
                               colors: const ProgressBarColors(
-                                playedColor: Color(0xFFBB0404),
-                                handleColor: Color(0xFFBB0404),
+                                playedColor: Color(0xFF5C0000),
+                                handleColor: Color(0xFF5C0000),
                                 bufferedColor: Colors.grey,
                                 backgroundColor: Colors.black26,
                               ),
@@ -265,14 +265,14 @@ class _AuruduGeethaScreenState extends State<AuruduGeethaScreen> {
       margin: const EdgeInsets.symmetric(vertical: 8),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: const Color(0xFFFAE3C3).withAlpha((0.9 * 255).toInt()),
+        color: const Color(0xFFFDF6E3).withAlpha((0.95 * 255).toInt()),
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: const Color(0xFFBB0404), width: 2),
+        border: Border.all(color: const Color(0xFFD4AF37), width: 1.5),
         boxShadow: const [
           BoxShadow(
-            color: Colors.black26,
-            blurRadius: 5,
-            offset: Offset(2, 4),
+            color: Colors.black45,
+            blurRadius: 8,
+            offset: Offset(2, 6),
           ),
         ],
       ),

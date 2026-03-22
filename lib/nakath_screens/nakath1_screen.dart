@@ -18,7 +18,7 @@ class Nakath1Screen extends StatelessWidget {
         constraints: const BoxConstraints.expand(),
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/background.jpg'),
+            image: AssetImage('assets/images/bg.png'),
             fit: BoxFit.cover,
           ),
         ),
@@ -34,7 +34,7 @@ class Nakath1Screen extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 26,
                     fontFamily: 'TharuDigitalNikini',
-                    color: Color(0xFFBB0404),
+                    color: Color(0xFFD4AF37),
                   ),
                 ),
                 const SizedBox(height: 16),
@@ -52,7 +52,7 @@ class Nakath1Screen extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 18,
                     fontFamily: 'FM_ARJUN',
-                    color: Colors.black87,
+                    color: Colors.white,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -76,7 +76,7 @@ class Nakath1Screen extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 12,
                     fontFamily: 'TharuDigitalNikini',
-                    color: Color(0xFFBB0404),
+                    color: Color(0xFFD4AF37),
                   ),
                 ),
 

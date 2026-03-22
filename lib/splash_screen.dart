@@ -30,7 +30,7 @@ class SplashScreenState extends State<SplashScreen> {
         children: [
           // Background Image
           Image.asset(
-            'assets/images/background.jpg',
+            'assets/images/bg.png',
             fit: BoxFit.cover,
           ),
           // Content

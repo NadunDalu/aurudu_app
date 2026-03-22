@@ -13,7 +13,7 @@ class TimerDetailsScreen extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/background.jpg'),
+            image: AssetImage('assets/images/bg.png'),
             fit: BoxFit.cover,
           ),
         ),

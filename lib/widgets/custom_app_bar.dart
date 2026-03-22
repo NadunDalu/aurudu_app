@@ -34,14 +34,14 @@ class _CustomAppBarState extends State<CustomAppBar> {
         style: const TextStyle(
           fontFamily: 'TharuDigitalNikini',
           fontSize: 22,
-          color: Color(0xFFBB0404),
+          color: Color(0xFFD4AF37),
         ),
       ),
       actions: [
         IconButton(
           icon: Icon(
             isPlaying ? Icons.volume_up : Icons.volume_off,
-            color: const Color(0xFFBB0404),
+            color: const Color(0xFFD4AF37),
           ),
           onPressed: _toggleAudio,
         ),

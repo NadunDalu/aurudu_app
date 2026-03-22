@@ -12,7 +12,7 @@ class RoundedRedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        backgroundColor: const Color(0xFFBB0404),
+        backgroundColor: const Color(0xFF5C0000),
         padding: const EdgeInsets.symmetric(
           vertical: 12,
           horizontal: 32,
@@ -27,7 +27,7 @@ class RoundedRedButton extends StatelessWidget {
         style: TextStyle(
           fontSize: 18,
           fontFamily: 'TharuDigitalNikini',
-          color: Colors.white,
+          color: Color(0xFFD4AF37),
         ),
       ),
     );

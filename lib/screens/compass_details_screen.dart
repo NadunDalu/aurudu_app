@@ -55,7 +55,7 @@ class _CompassDetailsScreenState extends State<CompassDetailsScreen> {
             height: double.infinity,
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/background.jpg'),
+                image: AssetImage('assets/images/bg.png'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -356,7 +356,7 @@ class _CompassDetailsScreenState extends State<CompassDetailsScreen> {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 18,
-                          color: Color(0xFFBB0404),
+                          color: Colors.white,
                           fontFamily: 'TharuDigitalNikini',
                         ),
                       ),
@@ -374,7 +374,7 @@ class _CompassDetailsScreenState extends State<CompassDetailsScreen> {
                         'iqn w¨;a wjqreoaola fõjd æ',
                         style: TextStyle(
                           fontSize: 24,
-                          color: Color(0xFFBB0404),
+                          color: Color(0xFFD4AF37),
                           fontFamily: 'TharuDigitalNikini',
                         ),
                         textAlign: TextAlign.center,
@@ -397,16 +397,16 @@ class _CompassDetailsScreenState extends State<CompassDetailsScreen> {
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              color: Color(0xFFBB0404),
+                              color: Colors.white70,
                             ),
                           ),
                           const Text(
                             'nadundaluwatta26@gmail.com',
-                            style: TextStyle(color: Color(0xFFBB0404)),
+                            style: TextStyle(color: Colors.white70),
                           ),
                           const Text(
                             'www.nadundaluwatta.me',
-                            style: TextStyle(color: Color(0xFFBB0404)),
+                            style: TextStyle(color: Colors.white70),
                           ),
                         ],
                       ),
