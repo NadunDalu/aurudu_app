@@ -55,8 +55,8 @@ cd aurudu_app
 ## 🧑🏻‍💻 Developed By
 
 **Nadun Daluwatta**  
-📧 nadundaluwatta26@gmail.com  
-🌐 [www.nadundaluwatta.me](https://www.nadundaluwatta.me)
+📧 nsdaluwatta@gmail.com  
+🌐 [www.nadundaluwatta.me](https://www.nadun.live)
 
 ---
 
