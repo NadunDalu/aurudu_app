@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
+import '../app_theme.dart';
 
 class TimerDisplay extends StatefulWidget {
   final DateTime targetDateTime;
@@ -23,7 +24,6 @@ class _TimerDisplayState extends State<TimerDisplay> {
   void initState() {
     super.initState();
     _updateTimeLeft();
-
     _timer = Timer.periodic(const Duration(seconds: 1), (_) {
       _updateTimeLeft();
     });
@@ -32,7 +32,6 @@ class _TimerDisplayState extends State<TimerDisplay> {
   void _updateTimeLeft() {
     final now = DateTime.now();
     final diff = widget.targetDateTime.difference(now);
-
     setState(() {
       _timeLeft = diff.isNegative ? Duration.zero : diff;
     });
@@ -44,6 +43,40 @@ class _TimerDisplayState extends State<TimerDisplay> {
     super.dispose();
   }
 
+  Widget _buildTimeBox(String value, String label) {
+    return Column(
+      children: [
+        Container(
+          width: 62,
+          height: 62,
+          decoration: BoxDecoration(
+            color: AuruduTheme.cream.withAlpha((0.15 * 255).toInt()),
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(
+              color: AuruduTheme.gold.withAlpha((0.4 * 255).toInt()),
+              width: 1,
+            ),
+          ),
+          child: Center(
+            child: Text(
+              value,
+              style: AuruduTheme.timerNumber,
+            ),
+          ),
+        ),
+        const SizedBox(height: 6),
+        Text(
+          label,
+          style: const TextStyle(
+            fontSize: 11,
+            fontFamily: 'TharuDigitalNikini',
+            color: AuruduTheme.warmWhite,
+          ),
+        ),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final days = formatDigits(_timeLeft.inDays);
@@ -51,26 +84,22 @@ class _TimerDisplayState extends State<TimerDisplay> {
     final minutes = formatDigits(_timeLeft.inMinutes % 60);
     final seconds = formatDigits(_timeLeft.inSeconds % 60);
 
-    return Column(
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(
-          '$days : $hours : $minutes : $seconds',
-          style: const TextStyle(
-            fontSize: 30,
-            fontWeight: FontWeight.bold,
-            color: Color(0xFFD4AF37),
-            fontFamily: 'Gafata-Regular',
-          ),
-        ),
-        const SizedBox(height: 10),
-        const Text(
-          '    Èk      meh    úkdä   ;;amr',
-          style: TextStyle(
-            fontSize: 14,
-            fontFamily: 'TharuDigitalNikini',
-            color: Color(0xFFD4AF37),
-          ),
-        ),
+        _buildTimeBox(days, 'Èk'),
+        const SizedBox(width: 8),
+        const Text(':', style: TextStyle(fontSize: 28, color: AuruduTheme.gold, fontWeight: FontWeight.bold)),
+        const SizedBox(width: 8),
+        _buildTimeBox(hours, 'meh'),
+        const SizedBox(width: 8),
+        const Text(':', style: TextStyle(fontSize: 28, color: AuruduTheme.gold, fontWeight: FontWeight.bold)),
+        const SizedBox(width: 8),
+        _buildTimeBox(minutes, 'úkdä'),
+        const SizedBox(width: 8),
+        const Text(':', style: TextStyle(fontSize: 28, color: AuruduTheme.gold, fontWeight: FontWeight.bold)),
+        const SizedBox(width: 8),
+        _buildTimeBox(seconds, ';;amr'),
       ],
     );
   }

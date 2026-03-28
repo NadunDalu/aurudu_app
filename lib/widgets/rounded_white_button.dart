@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../app_theme.dart';
 
 class RoundedWhiteButton extends StatelessWidget {
   final VoidCallback onPressed;
@@ -12,26 +13,23 @@ class RoundedWhiteButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return OutlinedButton(
       style: OutlinedButton.styleFrom(
-        backgroundColor: const Color(0xFFFDF6E3),
+        backgroundColor: AuruduTheme.cream.withAlpha((0.15 * 255).toInt()),
         side: const BorderSide(
-          color: Color(0xFF5C0000), // Deep Maroon border
-          width: 2,
+          color: AuruduTheme.gold,
+          width: 1.5,
         ),
-        padding: const EdgeInsets.symmetric(
-          vertical: 12,
-          horizontal: 32,
-        ),
+        padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 36),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(25),
         ),
       ),
       onPressed: onPressed,
       child: const Text(
-        'fmr kel;', // Fixed label
+        'fmr kel;',
         style: TextStyle(
           fontSize: 18,
           fontFamily: 'TharuDigitalNikini',
-          color: Color(0xFF5C0000), // Deep Maroon label
+          color: AuruduTheme.gold,
         ),
       ),
     );

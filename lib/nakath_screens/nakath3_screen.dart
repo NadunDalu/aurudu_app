@@ -5,115 +5,65 @@ import '../../widgets/rounded_red_button.dart';
 import '../../widgets/rounded_white_button.dart';
 import '../nakath_screens/nakath2_screen.dart';
 import '../nakath_screens/nakath4_screen.dart';
+import '../../app_theme.dart';
 
 class Nakath3Screen extends StatelessWidget {
   const Nakath3Screen({super.key});
 
-  String formatDigits(int n) => n.toString().padLeft(2, '0');
-
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: const CustomAppBar(title: 'kele;a iSÜgqj 2025'),
-      body: Container(
-        constraints: const BoxConstraints.expand(),
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/images/bg.png'),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const SizedBox(height: 12),
-
-              const Text(
-                'w¨;a wjqreÿ Wodj',
-                style: TextStyle(
-                  fontSize: 26,
-                  fontFamily: 'TharuDigitalNikini',
-                  color: Color(0xFFD4AF37),
-                ),
-              ),
-
-              const SizedBox(height: 16),
-
-              TimerDisplay(
-                targetDateTime: DateTime(2025, 4, 14, 03, 21), // Apr 14, 2025 at 3:21 AM
-              ),
-
-              const SizedBox(height: 20),
-
-              const Text(
-                'wfm%a,a ui 14 jk i÷od Èk mQ¾jNd. 03\'21g isxy, fou< w¿;a wjqreoao Wodfõ\'',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 18,
-                  fontFamily: 'FM_ARJUN',
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-
-              const SizedBox(height: 20),
-
-              ClipRRect(
-                borderRadius: BorderRadius.circular(16),
-                child: Image.asset(
-                  'assets/images/nakath3.png',
-                  height: 200,
-                  fit: BoxFit.cover,
-                ),
-              ),
-
-              const SizedBox(height: 20),
-
-              const Text(
-                'ie\'hq( by; ish¿ kele;a fõ,djka ms<sfh, lr we;af;a › ,xld iïu; Trf,daiq fõ,djg wkqj ixialD;sl lghq;= fomd¾;fïka;=fõ isxy, w¿;a wjqreÿ kele;a lñgqj úisks\'',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 12,
-                  fontFamily: 'TharuDigitalNikini',
-                  color: Color(0xFFD4AF37),
-                ),
-              ),
-
-              const SizedBox(height: 24),
-
-              // White and Red buttons
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  RoundedWhiteButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const Nakath2Screen(),
-                        ),
-                      );
-                    },
+      body: AuruduTheme.backgroundStack(
+        child: SafeArea(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const SizedBox(height: 12),
+                const Text('w¨;a wjqreÿ Wodj', style: AuruduTheme.titleGold),
+                const SizedBox(height: 16),
+                TimerDisplay(targetDateTime: DateTime(2025, 4, 14, 03, 21)),
+                const SizedBox(height: 20),
+                AuruduTheme.glassContainer(
+                  opacity: 0.15,
+                  child: const Text(
+                    'wfm%a,a ui 14 jk i÷od Èk mQ¾jNd. 03\'21g isxy, fou< w¿;a wjqreoao Wodfõ\'',
+                    textAlign: TextAlign.center,
+                    style: AuruduTheme.bodyWhite,
                   ),
-                  const SizedBox(width: 12),
-                  RoundedRedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder:
-                              (context) =>
-                                  const Nakath4Screen(), //change this to the next screen
-                        ),
-                      );
-                    },
+                ),
+                const SizedBox(height: 20),
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(color: AuruduTheme.gold.withAlpha((0.4 * 255).toInt()), width: 1.5),
+                    boxShadow: [BoxShadow(color: Colors.black.withAlpha((0.3 * 255).toInt()), blurRadius: 12, offset: const Offset(0, 4))],
                   ),
-                ],
-              ),
-            ],
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(18),
+                    child: Image.asset('assets/images/nakath3.png', height: 200, fit: BoxFit.cover),
+                  ),
+                ),
+                const SizedBox(height: 16),
+                const Text(
+                  'ie\'hq( by; ish¿ kele;a fõ,djka ms<sfh, lr we;af;a › ,xld iïu; Trf,daiq fõ,djg wkqj ixialD;sl lghq;= fomd¾;fïka;=fõ isxy, w¿;a wjqreÿ kele;a lñgqj úisks\'',
+                  textAlign: TextAlign.center, style: AuruduTheme.captionGold,
+                ),
+                const SizedBox(height: 24),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    RoundedWhiteButton(onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const Nakath2Screen()))),
+                    const SizedBox(width: 12),
+                    RoundedRedButton(onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const Nakath4Screen()))),
+                  ],
+                ),
+                const SizedBox(height: 20),
+              ],
+            ),
           ),
         ),
       ),
