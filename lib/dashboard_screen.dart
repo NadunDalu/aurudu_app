@@ -60,7 +60,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
         child: SafeArea(
           child: Column(
             children: [
-              const CustomAppBar(title: 'kele;a iSÜgqj 2025'),
+              const CustomAppBar(title: 'kele;a iSÜgqj 2026'),
               Expanded(
                 child: SingleChildScrollView(
                   padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -90,7 +90,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       // ─── Navigation Cards ───
                       _buildNavCard(
                         icon: Icons.auto_stories_rounded,
-                        title: 'kele;a iSÜgqj 2025',
+                        title: 'kele;a iSÜgqj 2026',
                         imagePath: 'assets/images/couple.png',
                         onTap: () => _navigateTo(const NakathScreen()),
                       ),
@@ -188,13 +188,17 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   return Column(
                     children: [
                       Text(
-                        upcoming?.title ?? 'නව නකත් සිදුවීමක් නැත',
+                        upcoming?.title ?? 'නව නැකත් සිදුවීමක් නැත',
                         style: AuruduTheme.subtitleGold,
                         textAlign: TextAlign.center,
                       ),
                       const SizedBox(height: 16),
                       if (upcoming != null)
-                        TimerDisplay(targetDateTime: upcoming.dateTime),
+                        TimerDisplay(
+                          key: ValueKey(upcoming.dateTime),
+                          targetDateTime: upcoming.dateTime,
+                          onComplete: () => setState(() {}),
+                        ),
                     ],
                   );
                 },

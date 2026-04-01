@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../widgets/custom_app_bar.dart';
 import '../app_theme.dart';
@@ -45,7 +45,7 @@ class AboutUsScreen extends StatelessWidget {
                 AuruduTheme.glassContainer(
                   opacity: 0.15,
                   child: const Text(
-                    'මෙම නැකැත් සීට්ටුව - 2025 Mobile එක Android දුරකතනයන් සඳහා develop කර ඇති අතර ඉදිරි වසර යන්හිදී Apple IOS සඳහාද නිකුත් කිරීමට බලා පොරොත්තු වෙමු. දැනට මෙය Google Play Store වෙතද නිකුත් කර නොමැත. (ඉදිරියේදී Play Store හරහා Download කරගැනීමට හැකිවනු ඇත.) දැනට Experiment අවධියේ ඇති App එකක් බැවින් ඔබේ වටිනා අදහස්, යෝජනා සහ චෝදනා පහත Button එක Click කිරීමෙන් ලබාදෙන ලෙස ඉල්ලා සිටිමු. ඔබ සැමට ස්තූතිය !',
+                    'මෙම නැකැත් සීට්ටුව - 2026 Mobile එක Android දුරකතනයන් සඳහා develop කර ඇති අතර ඉදිරි වසර යන්හිදී Apple IOS සඳහාද නිකුත් කිරීමට බලා පොරොත්තු වෙමු. දැනට මෙය Google Play Store වෙතද නිකුත් කර නොමැත. (ඉදිරියේදී Play Store හරහා Download කරගැනීමට හැකිවනු ඇත.) දැනට Experiment අවධියේ ඇති App එකක් බැවින් ඔබේ වටිනා අදහස්, යෝජනා සහ චෝදනා පහත Button එක Click කිරීමෙන් ලබාදෙන ලෙස ඉල්ලා සිටිමු. ඔබ සැමට ස්තූතිය !',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 15,

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import '../widgets/custom_app_bar.dart';
 import '../nakath_screens/nakath1_screen.dart';
 import '../nakath_screens/nakath2_screen.dart';
@@ -28,7 +28,7 @@ class NakathScreen extends StatelessWidget {
 
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: const CustomAppBar(title: 'kele;a iSÜgqj 2025'),
+      appBar: const CustomAppBar(title: 'kele;a iSÜgqj 2026'),
       body: AuruduTheme.backgroundStack(
         child: SafeArea(
           child: ListView.builder(

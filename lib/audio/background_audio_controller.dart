@@ -1,4 +1,4 @@
-import 'package:audioplayers/audioplayers.dart';
+﻿import 'package:audioplayers/audioplayers.dart';
 
 class BackgroundAudioController {
   static final BackgroundAudioController _instance = BackgroundAudioController._internal();

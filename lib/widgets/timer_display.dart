@@ -4,10 +4,12 @@ import '../app_theme.dart';
 
 class TimerDisplay extends StatefulWidget {
   final DateTime targetDateTime;
+  final VoidCallback? onComplete;
 
   const TimerDisplay({
     super.key,
     required this.targetDateTime,
+    this.onComplete,
   });
 
   @override
@@ -32,9 +34,24 @@ class _TimerDisplayState extends State<TimerDisplay> {
   void _updateTimeLeft() {
     final now = DateTime.now();
     final diff = widget.targetDateTime.difference(now);
-    setState(() {
-      _timeLeft = diff.isNegative ? Duration.zero : diff;
-    });
+    
+    if (diff.isNegative) {
+      // Check if _timeLeft was previously initialized and > 0 before calling onComplete
+      try {
+        if (_timeLeft.inSeconds > 0) {
+          widget.onComplete?.call();
+        }
+      } catch (_) {
+        // Late initialization error if accessed before being set
+      }
+      setState(() {
+        _timeLeft = Duration.zero;
+      });
+    } else {
+      setState(() {
+        _timeLeft = diff;
+      });
+    }
   }
 
   @override

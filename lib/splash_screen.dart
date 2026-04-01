@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dashboard_screen.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
@@ -131,7 +131,7 @@ class SplashScreenState extends State<SplashScreen>
                     ),
                     const SizedBox(height: 8),
                     const Text(
-                      '2025',
+                      '2026',
                       style: TextStyle(
                         fontSize: 28,
                         fontWeight: FontWeight.w300,

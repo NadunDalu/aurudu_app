@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'splash_screen.dart';
 import '../audio/background_audio_controller.dart';
 

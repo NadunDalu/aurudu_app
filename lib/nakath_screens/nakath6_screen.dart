@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import '../../widgets/custom_app_bar.dart';
 import '../../widgets/timer_display.dart';
 import '../../widgets/rounded_red_button.dart';
@@ -14,7 +14,7 @@ class Nakath6Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: const CustomAppBar(title: 'kele;a iSÜgqj 2025'),
+      appBar: const CustomAppBar(title: 'kele;a iSÜgqj 2026'),
       body: AuruduTheme.backgroundStack(
         child: SafeArea(
           child: SingleChildScrollView(
@@ -25,7 +25,7 @@ class Nakath6Screen extends StatelessWidget {
                 const SizedBox(height: 12),
                 const Text('jev we,a,Su" .kqfokq lsÍu yd wdydr wkqNjh', style: AuruduTheme.titleGold),
                 const SizedBox(height: 16),
-                TimerDisplay(targetDateTime: DateTime(2025, 4, 14, 06, 44)),
+                TimerDisplay(targetDateTime: DateTime(2026, 4, 14, 06, 44)),
                 const SizedBox(height: 20),
                 AuruduTheme.glassContainer(
                   opacity: 0.15,
