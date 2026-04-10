@@ -135,8 +135,8 @@ class SplashScreenState extends State<SplashScreen>
                       style: TextStyle(
                         fontSize: 28,
                         fontWeight: FontWeight.w300,
-                        color: AuruduTheme.warmWhite,
-                        fontFamily: 'Gafata-Regular',
+                        color: AuruduTheme.gold,
+                        fontFamily: 'TharuDigitalNikini',
                         letterSpacing: 8,
                       ),
                     ),

@@ -19,12 +19,14 @@ class TimerDisplay extends StatefulWidget {
 class _TimerDisplayState extends State<TimerDisplay> {
   late Duration _timeLeft;
   late Timer _timer;
+  bool _hasCompleted = false;
 
   String formatDigits(int n) => n.toString().padLeft(2, '0');
 
   @override
   void initState() {
     super.initState();
+    _timeLeft = Duration.zero;
     _updateTimeLeft();
     _timer = Timer.periodic(const Duration(seconds: 1), (_) {
       _updateTimeLeft();
@@ -36,13 +38,9 @@ class _TimerDisplayState extends State<TimerDisplay> {
     final diff = widget.targetDateTime.difference(now);
     
     if (diff.isNegative) {
-      // Check if _timeLeft was previously initialized and > 0 before calling onComplete
-      try {
-        if (_timeLeft.inSeconds > 0) {
-          widget.onComplete?.call();
-        }
-      } catch (_) {
-        // Late initialization error if accessed before being set
+      if (!_hasCompleted) {
+        _hasCompleted = true;
+        widget.onComplete?.call();
       }
       setState(() {
         _timeLeft = Duration.zero;
@@ -101,23 +99,26 @@ class _TimerDisplayState extends State<TimerDisplay> {
     final minutes = formatDigits(_timeLeft.inMinutes % 60);
     final seconds = formatDigits(_timeLeft.inSeconds % 60);
 
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        _buildTimeBox(days, 'Èk'),
-        const SizedBox(width: 8),
-        const Text(':', style: TextStyle(fontSize: 28, color: AuruduTheme.gold, fontWeight: FontWeight.bold)),
-        const SizedBox(width: 8),
-        _buildTimeBox(hours, 'meh'),
-        const SizedBox(width: 8),
-        const Text(':', style: TextStyle(fontSize: 28, color: AuruduTheme.gold, fontWeight: FontWeight.bold)),
-        const SizedBox(width: 8),
-        _buildTimeBox(minutes, 'úkdä'),
-        const SizedBox(width: 8),
-        const Text(':', style: TextStyle(fontSize: 28, color: AuruduTheme.gold, fontWeight: FontWeight.bold)),
-        const SizedBox(width: 8),
-        _buildTimeBox(seconds, ';;amr'),
-      ],
+    return FittedBox(
+      fit: BoxFit.scaleDown,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          _buildTimeBox(days, 'Èk'),
+          const SizedBox(width: 8),
+          const Text(':', style: TextStyle(fontSize: 28, color: AuruduTheme.gold, fontWeight: FontWeight.bold)),
+          const SizedBox(width: 8),
+          _buildTimeBox(hours, 'meh'),
+          const SizedBox(width: 8),
+          const Text(':', style: TextStyle(fontSize: 28, color: AuruduTheme.gold, fontWeight: FontWeight.bold)),
+          const SizedBox(width: 8),
+          _buildTimeBox(minutes, 'úkdä'),
+          const SizedBox(width: 8),
+          const Text(':', style: TextStyle(fontSize: 28, color: AuruduTheme.gold, fontWeight: FontWeight.bold)),
+          const SizedBox(width: 8),
+          _buildTimeBox(seconds, ';;amr'),
+        ],
+      ),
     );
   }
 }

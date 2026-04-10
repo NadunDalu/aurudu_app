@@ -1,18 +1,34 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+import '../../utils/page_transitions.dart';
 import '../../widgets/custom_app_bar.dart';
 import '../../widgets/timer_display.dart';
+import '../../widgets/rounded_red_button.dart';
 import '../../widgets/rounded_white_button.dart';
 import '../nakath_screens/nakath7_screen.dart';
+import '../nakath_screens/nakath9_screen.dart';
 import '../../app_theme.dart';
+import '../../screens/nakath_screen.dart';
 
 class Nakath8Screen extends StatelessWidget {
   const Nakath8Screen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, dynamic result) {
+        if (didPop) return;
+        Navigator.pushAndRemoveUntil(
+          context,
+          smoothFadeRoute(const NakathScreen()),
+          (route) => route.isFirst,
+        );
+      },
+      child: Scaffold(
+      backgroundColor: AuruduTheme.darkBg,
+      extendBody: true,
       extendBodyBehindAppBar: true,
-      appBar: const CustomAppBar(title: 'kele;a iSÜgqj 2026'),
+      appBar: CustomAppBar(title: 'kele;a iSÜgqj 2026', onBackPressed: () => Navigator.pushAndRemoveUntil(context, smoothFadeRoute(const NakathScreen()), (route) => route.isFirst)),
       body: AuruduTheme.backgroundStack(
         child: SafeArea(
           child: SingleChildScrollView(
@@ -21,14 +37,14 @@ class Nakath8Screen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const SizedBox(height: 12),
-                const Text('/lSrlaId i|yd msg;aùu', style: AuruduTheme.titleGold),
+                const Text('yÈis rdcldß i|yd msg;aj hdu', style: AuruduTheme.titleGold),
                 const SizedBox(height: 16),
-                TimerDisplay(targetDateTime: DateTime(2026, 4, 17, 09, 03)),
+                TimerDisplay(targetDateTime: DateTime(2026, 4, 10, 11, 18)),//hadisi rajakari pitathwayama
                 const SizedBox(height: 20),
                 AuruduTheme.glassContainer(
                   opacity: 0.15,
-                  child: const Text(
-                    'wfm%a,a ui 17 jk n%yiam;skaod mQ¾jNd. 09\'03g rkajka  meye;s jia;%dNrKfhka ieriS lsß n;la yd t<lsß ñY% leú,s j¾.hla wkqNj lr W;=re ÈYdj n,d msg;aj hEu uekú\'',
+                  child: const Text(//hadisi rajakari pitathwayama
+                    'wfm%a,a ui 17jk isl=rdod Èk mQ¾jNd. 05\'38g rkajka mdg jia;%dNrKfhka ieriS" §lsß ñY% lsßn;la o yl=re o W÷ ñY% leú,s j¾.hlao wkqNj lr W;=re ÈYdj n,d msg;aj hdu uekú\'',
                     textAlign: TextAlign.center,
                     style: AuruduTheme.bodyWhite,
                   ),
@@ -51,14 +67,24 @@ class Nakath8Screen extends StatelessWidget {
                   textAlign: TextAlign.center, style: AuruduTheme.captionGold,
                 ),
                 const SizedBox(height: 24),
-                RoundedWhiteButton(
-                  onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const Nakath7Screen())),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    RoundedWhiteButton(
+                      onPressed: () => Navigator.push(context, smoothPageRoute(const Nakath7Screen())),
+                    ),
+                    const SizedBox(width: 12),
+                    RoundedRedButton(
+                      onPressed: () => Navigator.push(context, smoothPageRoute(const Nakath9Screen())),
+                    ),
+                  ],
                 ),
                 const SizedBox(height: 20),
               ],
             ),
           ),
         ),
+      ),
       ),
     );
   }

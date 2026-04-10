@@ -1,23 +1,17 @@
-﻿import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter/material.dart';
 import '../widgets/custom_app_bar.dart';
 import '../app_theme.dart';
+import '../widgets/rating_form.dart';
+import '../widgets/feedback_carousel.dart';
 
 class AboutUsScreen extends StatelessWidget {
   const AboutUsScreen({super.key});
 
-  Future<void> _launchFeedbackForm() async {
-    final url = Uri.parse('https://forms.gle/DraJwqRsNGp6v2Lw8');
-    try {
-      await launchUrl(url, mode: LaunchMode.externalApplication);
-    } catch (e) {
-      debugPrint('Could not launch the link: $e');
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AuruduTheme.darkBg,
+      extendBody: true,
       extendBodyBehindAppBar: true,
       appBar: const CustomAppBar(title: 'woyia yd fhdackd'),
       body: AuruduTheme.backgroundStack(
@@ -45,7 +39,7 @@ class AboutUsScreen extends StatelessWidget {
                 AuruduTheme.glassContainer(
                   opacity: 0.15,
                   child: const Text(
-                    'මෙම නැකැත් සීට්ටුව - 2026 Mobile එක Android දුරකතනයන් සඳහා develop කර ඇති අතර ඉදිරි වසර යන්හිදී Apple IOS සඳහාද නිකුත් කිරීමට බලා පොරොත්තු වෙමු. දැනට මෙය Google Play Store වෙතද නිකුත් කර නොමැත. (ඉදිරියේදී Play Store හරහා Download කරගැනීමට හැකිවනු ඇත.) දැනට Experiment අවධියේ ඇති App එකක් බැවින් ඔබේ වටිනා අදහස්, යෝජනා සහ චෝදනා පහත Button එක Click කිරීමෙන් ලබාදෙන ලෙස ඉල්ලා සිටිමු. ඔබ සැමට ස්තූතිය !',
+                    'මෙම නැකැත් සීට්ටුව - 2026 Mobile App එක Android දුරකතනයන් සඳහා develop කර ඇති අතර ඉදිරි වසර යන්හිදී Apple IOS සඳහාද නිකුත් කිරීමට බලා පොරොත්තු වෙමු. දැනට මෙය Google Play Store වෙතද නිකුත් කර නොමැත. දැනට Experiment අවධියේ ඇති App එකක් බැවින් ඔබේ වටිනා අදහස්, යෝජනා සහ චෝදනා පහත Form එක මගින් ලබාදෙන ලෙස ඉල්ලා සිටිමු. ඔබ සැමට ස්තූතියී !',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 15,
@@ -55,41 +49,9 @@ class AboutUsScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 30),
-                SizedBox(
-                  width: double.infinity,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      gradient: AuruduTheme.buttonGradient,
-                      borderRadius: BorderRadius.circular(30),
-                      boxShadow: [
-                        BoxShadow(
-                          color: AuruduTheme.festiveRed.withAlpha((0.4 * 255).toInt()),
-                          blurRadius: 12,
-                          offset: const Offset(0, 4),
-                        ),
-                      ],
-                    ),
-                    child: ElevatedButton(
-                      onPressed: _launchFeedbackForm,
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.transparent,
-                        shadowColor: Colors.transparent,
-                        padding: const EdgeInsets.symmetric(vertical: 14),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                      ),
-                      child: const Text(
-                        'woyia yd fhdackd',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontFamily: 'TharuDigitalNikini',
-                          color: AuruduTheme.gold,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
+                const RatingForm(),
+                const SizedBox(height: 30),
+                const FeedbackCarousel(),
                 const SizedBox(height: 40),
                 Column(
                   children: [
@@ -101,11 +63,11 @@ class AboutUsScreen extends StatelessWidget {
                       style: AuruduTheme.footerText,
                     ),
                     const Text(
-                      'nadundaluwatta26@gmail.com',
+                      'nsdaluwatta@gmail.com',
                       style: AuruduTheme.footerText,
                     ),
                     const Text(
-                      'www.nadundaluwatta.me',
+                      'www.nadun.live',
                       style: AuruduTheme.footerText,
                     ),
                   ],

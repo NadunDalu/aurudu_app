@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import '../widgets/custom_app_bar.dart';
 import '../app_theme.dart';
 
@@ -8,6 +8,8 @@ class TimerDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AuruduTheme.darkBg,
+      extendBody: true,
       extendBodyBehindAppBar: true,
       appBar: const CustomAppBar(title: 'Timer Details'),
       body: AuruduTheme.backgroundStack(

@@ -1,4 +1,5 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+import '../utils/page_transitions.dart';
 import '../widgets/custom_app_bar.dart';
 import '../nakath_screens/nakath1_screen.dart';
 import '../nakath_screens/nakath2_screen.dart';
@@ -8,6 +9,7 @@ import '../nakath_screens/nakath5_screen.dart';
 import '../nakath_screens/nakath6_screen.dart';
 import '../nakath_screens/nakath7_screen.dart';
 import '../nakath_screens/nakath8_screen.dart';
+import '../nakath_screens/nakath9_screen.dart';
 import '../app_theme.dart';
 
 class NakathScreen extends StatelessWidget {
@@ -23,10 +25,13 @@ class NakathScreen extends StatelessWidget {
       {'title': 'wdydr msiSu', 'image': 'assets/images/nakath5.png', 'screen': const Nakath5Screen()},
       {'title': 'jev we,a,Su" .kqfokq lsÍu yd wdydr wkqNjh', 'image': 'assets/images/nakath6.png', 'screen': const Nakath6Screen()},
       {'title': 'ysi f;,a .Eu', 'image': 'assets/images/nakath7.png', 'screen': const Nakath7Screen()},
-      {'title': '/lSrlaId i|yd msg;aùu', 'image': 'assets/images/nakath8.png', 'screen': const Nakath8Screen()},
+      {'title': 'yÈis rdcldß i|yd msg;aj hdu', 'image': 'assets/images/nakath8.png', 'screen': const Nakath8Screen()},
+      {'title': '/lSrlaId i|yd msg;aùu', 'image': 'assets/images/nakath9.png', 'screen': const Nakath9Screen()},
     ];
 
     return Scaffold(
+      backgroundColor: AuruduTheme.darkBg,
+      extendBody: true,
       extendBodyBehindAppBar: true,
       appBar: const CustomAppBar(title: 'kele;a iSÜgqj 2026'),
       body: AuruduTheme.backgroundStack(
@@ -39,7 +44,7 @@ class NakathScreen extends StatelessWidget {
               return Padding(
                 padding: const EdgeInsets.symmetric(vertical: 6),
                 child: InkWell(
-                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => item['screen'])),
+                  onTap: () => Navigator.push(context, smoothPageRoute(item['screen'])),
                   borderRadius: BorderRadius.circular(20),
                   child: Container(
                     padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 16),

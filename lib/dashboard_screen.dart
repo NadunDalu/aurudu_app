@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../utils/page_transitions.dart';
 import '../widgets/custom_app_bar.dart';
 import '../widgets/timer_display.dart';
 import '../data/nakath_data.dart';
@@ -17,6 +18,7 @@ import '../nakath_screens/nakath5_screen.dart';
 import '../nakath_screens/nakath6_screen.dart';
 import '../nakath_screens/nakath7_screen.dart';
 import '../nakath_screens/nakath8_screen.dart';
+import '../nakath_screens/nakath9_screen.dart';
 
 // Helper function to get screen by title
 Widget? getNakathScreenByTitle(String title) {
@@ -35,8 +37,10 @@ Widget? getNakathScreenByTitle(String title) {
       return const Nakath6Screen();
     case 'ysi f;,a .Eu':
       return const Nakath7Screen();
-    case '/lSrlaId i|yd msg;aùu':
+    case 'kj kele;':
       return const Nakath8Screen();
+    case '/lSrlaId i|yd msg;aùu':
+      return const Nakath9Screen();
     default:
       return null;
   }
@@ -55,6 +59,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AuruduTheme.darkBg,
+      extendBody: true,
       extendBodyBehindAppBar: true,
       body: AuruduTheme.backgroundStack(
         child: SafeArea(
@@ -148,10 +154,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   }
 
   void _navigateTo(Widget screen) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => screen),
-    );
+    Navigator.push(context, smoothPageRoute(screen));
   }
 
   Widget _buildTimerCard() {
@@ -274,11 +277,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
           style: AuruduTheme.footerText,
         ),
         const Text(
-          'nadundaluwatta26@gmail.com',
+          'nsaluwatta@gmail.com',
           style: AuruduTheme.footerText,
         ),
         const Text(
-          'www.nadundaluwatta.me',
+          'www.nadun.live',
           style: AuruduTheme.footerText,
         ),
       ],

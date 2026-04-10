@@ -2,15 +2,13 @@ import 'package:flutter/material.dart';
 import '../../utils/page_transitions.dart';
 import '../../widgets/custom_app_bar.dart';
 import '../../widgets/timer_display.dart';
-import '../../widgets/rounded_red_button.dart';
 import '../../widgets/rounded_white_button.dart';
-import '../nakath_screens/nakath3_screen.dart';
-import '../nakath_screens/nakath5_screen.dart';
+import '../nakath_screens/nakath8_screen.dart';
 import '../../app_theme.dart';
 import '../../screens/nakath_screen.dart';
 
-class Nakath4Screen extends StatelessWidget {
-  const Nakath4Screen({super.key});
+class Nakath9Screen extends StatelessWidget {
+  const Nakath9Screen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -37,14 +35,14 @@ class Nakath4Screen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const SizedBox(height: 12),
-                const Text('mqKH ld,h', style: AuruduTheme.titleGold),
+                const Text('/lSrlaId i|yd msg;aùu', style: AuruduTheme.titleGold),
                 const SizedBox(height: 16),
-                TimerDisplay(targetDateTime: DateTime(2026, 4, 10, 10, 05)),//punya kalaya
+                TimerDisplay(targetDateTime: DateTime(2026, 4, 10, 11, 30)),//rakiya sandaha pitathwayama
                 const SizedBox(height: 20),
                 AuruduTheme.glassContainer(
                   opacity: 0.15,
-                  child: const Text(//punya kalaya
-                    'wfm%a,a ui 14 jk wÕyrejdod mQ¾jNd. 03\'08 isg tÈku wmrNd. 03\'56 olajd mqKH ld,h neúka wfm%a,a ui 14 jk wÕyrejdod mQ¾jNd. 03\'08 g m<uqj wdydr mdk f.k ish¨ jev w;ayer wd.ñl j;dj;a j, fh§u o mqKH ld,fha wmr fldgi tkï wfm%a,a ui 14 jk wÕyrejdod mQ¾jNd. 09\'32 isg 14 jk wÕyrejdod wmrNd. 03\'56 olajd my; oelafjk whqßka wdydr msiSu" jev we,a,Su" .Kqfokq lsÍu yd wdydr wkqNjh wd§ kele;a pdß;% úê bgq lsÍu uekú\'',
+                  child: const Text(//rakiya sandaha pitathwayama
+                    'wfm%a,a ui 20 jk i÷od mQ¾jNd. 06\'27 g Yafõ; j¾K jia;%dNrKfhka ieriS lsß n;la yd t<lsß ñY% leú,s j¾.hla wkqNj lr ol=Kq ÈYdj n,d msg;aj hEu uekú\'',
                     textAlign: TextAlign.center,
                     style: AuruduTheme.bodyWhite,
                   ),
@@ -58,7 +56,7 @@ class Nakath4Screen extends StatelessWidget {
                   ),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(18),
-                    child: Image.asset('assets/images/nakath4.png', height: 200, fit: BoxFit.cover),
+                    child: Image.asset('assets/images/nakath9.png', height: 200, fit: BoxFit.cover),
                   ),
                 ),
                 const SizedBox(height: 16),
@@ -67,13 +65,8 @@ class Nakath4Screen extends StatelessWidget {
                   textAlign: TextAlign.center, style: AuruduTheme.captionGold,
                 ),
                 const SizedBox(height: 24),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    RoundedWhiteButton(onPressed: () => Navigator.push(context, smoothPageRoute(const Nakath3Screen()))),
-                    const SizedBox(width: 12),
-                    RoundedRedButton(onPressed: () => Navigator.push(context, smoothPageRoute(const Nakath5Screen()))),
-                  ],
+                RoundedWhiteButton(
+                  onPressed: () => Navigator.push(context, smoothPageRoute(const Nakath8Screen())),
                 ),
                 const SizedBox(height: 20),
               ],

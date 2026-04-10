@@ -1,4 +1,5 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+import '../../utils/page_transitions.dart';
 import '../../widgets/custom_app_bar.dart';
 import '../../widgets/timer_display.dart';
 import '../../widgets/rounded_red_button.dart';
@@ -6,15 +7,28 @@ import '../../widgets/rounded_white_button.dart';
 import '../nakath_screens/nakath4_screen.dart';
 import '../nakath_screens/nakath6_screen.dart';
 import '../../app_theme.dart';
+import '../../screens/nakath_screen.dart';
 
 class Nakath5Screen extends StatelessWidget {
   const Nakath5Screen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, dynamic result) {
+        if (didPop) return;
+        Navigator.pushAndRemoveUntil(
+          context,
+          smoothFadeRoute(const NakathScreen()),
+          (route) => route.isFirst,
+        );
+      },
+      child: Scaffold(
+      backgroundColor: AuruduTheme.darkBg,
+      extendBody: true,
       extendBodyBehindAppBar: true,
-      appBar: const CustomAppBar(title: 'kele;a iSÜgqj 2026'),
+      appBar: CustomAppBar(title: 'kele;a iSÜgqj 2026', onBackPressed: () => Navigator.pushAndRemoveUntil(context, smoothFadeRoute(const NakathScreen()), (route) => route.isFirst)),
       body: AuruduTheme.backgroundStack(
         child: SafeArea(
           child: SingleChildScrollView(
@@ -25,12 +39,12 @@ class Nakath5Screen extends StatelessWidget {
                 const SizedBox(height: 12),
                 const Text('wdydr msiSu', style: AuruduTheme.titleGold),
                 const SizedBox(height: 16),
-                TimerDisplay(targetDateTime: DateTime(2026, 4, 14, 04, 04)),
+                TimerDisplay(targetDateTime: DateTime(2026, 4, 10, 10, 30)),//ahara pisima
                 const SizedBox(height: 20),
                 AuruduTheme.glassContainer(
                   opacity: 0.15,
-                  child: const Text(
-                    'wfm%a,a ui 14 jk i÷od mQ¾jNd. 04\'04g ;U j¾K \njia;%dNrKfhka ieriS ol=Kq ÈYdj n,d ,sma ne| .sks fud<jd lsß n;la o leú,s j¾.hla o § lsß iy ú,| o ms<sfh, lr.ekSu uekú\'',
+                  child: const Text(//ahara pisima
+                    'wfm%a,a ui 14 jk wÕyrejdod mQ¾jNd. 10\'51 g rla; j¾K jia;%dNrKfhka ieriS ol=Kq ÈYdj n,d ,sma ne| .sks fud<jd lsß n;la o leú,s j¾.hla o § lsß iy ú,| o ms<sfh, lr.ekSu uekú\'',
                     textAlign: TextAlign.center,
                     style: AuruduTheme.bodyWhite,
                   ),
@@ -56,9 +70,9 @@ class Nakath5Screen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    RoundedWhiteButton(onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const Nakath4Screen()))),
+                    RoundedWhiteButton(onPressed: () => Navigator.push(context, smoothPageRoute(const Nakath4Screen()))),
                     const SizedBox(width: 12),
-                    RoundedRedButton(onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const Nakath6Screen()))),
+                    RoundedRedButton(onPressed: () => Navigator.push(context, smoothPageRoute(const Nakath6Screen()))),
                   ],
                 ),
                 const SizedBox(height: 20),
@@ -66,6 +80,7 @@ class Nakath5Screen extends StatelessWidget {
             ),
           ),
         ),
+      ),
       ),
     );
   }

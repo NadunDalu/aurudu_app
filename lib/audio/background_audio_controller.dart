@@ -1,55 +1,102 @@
-﻿import 'package:audioplayers/audioplayers.dart';
+import 'package:flutter/foundation.dart';
+import 'package:audioplayers/audioplayers.dart';
 
+/// Singleton controller for the background music loop.
 class BackgroundAudioController {
-  static final BackgroundAudioController _instance = BackgroundAudioController._internal();
+  static final BackgroundAudioController _instance =
+      BackgroundAudioController._internal();
   factory BackgroundAudioController() => _instance;
-
-  final AudioPlayer _player = AudioPlayer();
-  bool _isPlaying = false;
-  bool _isManuallyMuted = false; // ✅ New flag
-
   BackgroundAudioController._internal();
 
-  bool get isPlaying => _isPlaying;
+  final AudioPlayer _player = AudioPlayer();
+  final _source = AssetSource('audio/bgm.mp3');
+
+  /// Observable mute state for UI binding.
+  final ValueNotifier<bool> isMutedNotifier = ValueNotifier(false);
+
+  bool _isInitialized = false;
+  bool _isManuallyMuted = false;
+  bool _isTemporarilyDisabled = false;
+  bool _isPlaying = false;
+
   bool get isMuted => _isManuallyMuted;
 
+  // ── Initialise & auto-play ──────────────────────────
   Future<void> init() async {
-    await _player.setReleaseMode(ReleaseMode.loop);
-    await _player.setSource(AssetSource('audio/bgm.mp3'));
-    play();
-  }
+    if (_isInitialized) return;
+    _isInitialized = true;
 
-  void play() {
-    if (!_isManuallyMuted) {
-      _player.resume();
+    try {
+      await _player.setReleaseMode(ReleaseMode.loop);
+      await _player.setVolume(0.35);
+      await _player.play(_source);
       _isPlaying = true;
+      debugPrint('BGM started');
+    } catch (e) {
+      debugPrint('BGM init error: $e');
+      _isInitialized = false;
     }
   }
 
-  void pause() {
-    _player.pause();
-    _isPlaying = false;
+  // ── Resume playback ───────────────────────────────
+  Future<void> _resume() async {
+    if (!_isInitialized || _isManuallyMuted || _isTemporarilyDisabled) return;
+    try {
+      if (!_isPlaying) {
+        await _player.resume();
+        _isPlaying = true;
+        debugPrint('BGM resumed');
+      }
+    } catch (e) {
+      debugPrint('BGM resume error: $e');
+      // Fallback: re-play from source
+      try {
+        await _player.play(_source);
+        _isPlaying = true;
+        debugPrint('BGM re-played from source');
+      } catch (e2) {
+        debugPrint('BGM re-play error: $e2');
+      }
+    }
   }
 
-  void toggle() {
+  // ── Pause playback ────────────────────────────────
+  Future<void> _pause() async {
     if (_isPlaying) {
-      pause();
-      _isManuallyMuted = true;
-    } else {
-      _isManuallyMuted = false;
-      play();
+      await _player.pause();
+      _isPlaying = false;
+      debugPrint('BGM paused');
     }
   }
 
-  void forcePause() {
-    _player.pause();
-    _isPlaying = false;
+  // ── Mute toggle (user action) ──────────────────────
+  void toggle() {
+    _isManuallyMuted = !_isManuallyMuted;
+    isMutedNotifier.value = _isManuallyMuted;
+    debugPrint('BGM mute toggled: $_isManuallyMuted');
+
+    if (_isManuallyMuted) {
+      _pause();
+    } else if (!_isTemporarilyDisabled) {
+      _resume();
+    }
   }
 
-  void autoResume() {
-    if (!_isManuallyMuted) {
-      play();
-    }
+  // ── Temporary disable (while Geetha plays) ────────
+  void disableTemporarily() {
+    _isTemporarilyDisabled = true;
+    _pause();
+  }
+
+  void enableTemporarily() {
+    _isTemporarilyDisabled = false;
+    if (!_isManuallyMuted) _resume();
+  }
+
+  // ── App lifecycle helpers ─────────────────────────
+  void onAppPaused() => _pause();
+
+  void onAppResumed() {
+    if (!_isManuallyMuted && !_isTemporarilyDisabled) _resume();
   }
 }
-

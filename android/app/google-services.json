@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "628929979712",
+    "project_id": "aurudu-app",
+    "storage_bucket": "aurudu-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:628929979712:android:9c9233093315cb8c2f46a5",
+        "android_client_info": {
+          "package_name": "com.example.aurudu_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCW_gXEB2s8xe4Gu6oTrCJiLU-75BpQ60Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,18 +1,32 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+import '../../utils/page_transitions.dart';
 import '../../widgets/custom_app_bar.dart';
 import '../../widgets/timer_display.dart';
 import '../../widgets/rounded_red_button.dart';
 import '../nakath_screens/nakath2_screen.dart';
 import '../../app_theme.dart';
+import '../../screens/nakath_screen.dart';
 
 class Nakath1Screen extends StatelessWidget {
   const Nakath1Screen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, dynamic result) {
+        if (didPop) return;
+        Navigator.pushAndRemoveUntil(
+          context,
+          smoothFadeRoute(const NakathScreen()),
+          (route) => route.isFirst,
+        );
+      },
+      child: Scaffold(
+      backgroundColor: AuruduTheme.darkBg,
+      extendBody: true,
       extendBodyBehindAppBar: true,
-      appBar: const CustomAppBar(title: 'kele;a iSÜgqj 2026'),
+      appBar: CustomAppBar(title: 'kele;a iSÜgqj 2026', onBackPressed: () => Navigator.pushAndRemoveUntil(context, smoothFadeRoute(const NakathScreen()), (route) => route.isFirst)),
       body: AuruduTheme.backgroundStack(
         child: SafeArea(
           child: SingleChildScrollView(
@@ -25,14 +39,14 @@ class Nakath1Screen extends StatelessWidget {
                 const SizedBox(height: 16),
 
                 TimerDisplay(
-                  targetDateTime: DateTime(2026, 4, 19, 18, 0),
+                  targetDateTime: DateTime(2026, 4, 19, 18, 0),//nawa sanda balima
                 ),
 
                 const SizedBox(height: 20),
 
                 AuruduTheme.glassContainer(
                   opacity: 0.15,
-                  child: const Text(
+                  child: const Text(//nawa sanda balima
                     'wNskj pkaø j¾Ih i|yd ud¾;= ui 20 jk isl=rdod Èk o wNskj iQ¾h j¾Ih i|yd wfm%a,a ui 19 jk bßod Èk o" kj i| ne,Su uekú\'',
                     textAlign: TextAlign.center,
                     style: AuruduTheme.bodyWhite,
@@ -78,12 +92,7 @@ class Nakath1Screen extends StatelessWidget {
 
                 RoundedRedButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const Nakath2Screen(),
-                      ),
-                    );
+                    Navigator.push(context, smoothPageRoute(const Nakath2Screen()));
                   },
                 ),
                 const SizedBox(height: 20),
@@ -91,6 +100,7 @@ class Nakath1Screen extends StatelessWidget {
             ),
           ),
         ),
+      ),
       ),
     );
   }
