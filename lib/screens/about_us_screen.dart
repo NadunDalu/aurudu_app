@@ -25,7 +25,7 @@ class AboutUsScreen extends StatelessWidget {
                   shaderCallback: (bounds) =>
                       AuruduTheme.goldShimmer.createShader(bounds),
                   child: const Text(
-                    'Tfí woyia yd fhdackd wmfj;a fhduq lrkak\'',
+                    'Tfí woyia yd fhdackd wmfj; fhduq lrkak\'',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 26,
