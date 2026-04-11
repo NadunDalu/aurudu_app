@@ -39,7 +39,7 @@ class Nakath8Screen extends StatelessWidget {
                 const SizedBox(height: 12),
                 const Text('yÈis rdcldß i|yd msg;aj hdu', style: AuruduTheme.titleGold),
                 const SizedBox(height: 16),
-                TimerDisplay(targetDateTime: DateTime(2026, 4, 10, 11, 18)),//hadisi rajakari pitathwayama
+                TimerDisplay(targetDateTime: DateTime(2026, 4, 17, 05, 38)),//hadisi rajakari pitathwayama
                 const SizedBox(height: 20),
                 AuruduTheme.glassContainer(
                   opacity: 0.15,

@@ -37,7 +37,7 @@ class Nakath9Screen extends StatelessWidget {
                 const SizedBox(height: 12),
                 const Text('/lSrlaId i|yd msg;aùu', style: AuruduTheme.titleGold),
                 const SizedBox(height: 16),
-                TimerDisplay(targetDateTime: DateTime(2026, 4, 10, 11, 30)),//rakiya sandaha pitathwayama
+                TimerDisplay(targetDateTime: DateTime(2026, 4, 20, 06, 27)),//rakiya sandaha pitathwayama
                 const SizedBox(height: 20),
                 AuruduTheme.glassContainer(
                   opacity: 0.15,

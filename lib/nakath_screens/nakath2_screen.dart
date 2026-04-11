@@ -39,7 +39,7 @@ class Nakath2Screen extends StatelessWidget {
                 const SizedBox(height: 12),
                 const Text('mrK wjqreoao i|yd iakdkh', style: AuruduTheme.titleGold),
                 const SizedBox(height: 16),
-                TimerDisplay(targetDateTime: DateTime(2026, 4, 10, 02, 30)),////parana auruddata snanaya
+                TimerDisplay(targetDateTime: DateTime(2026, 4, 13, 09, 00)),////parana auruddata snanaya
                 const SizedBox(height: 20),
                 AuruduTheme.glassContainer(
                   opacity: 0.15,

@@ -39,7 +39,7 @@ class Nakath4Screen extends StatelessWidget {
                 const SizedBox(height: 12),
                 const Text('mqKH ld,h', style: AuruduTheme.titleGold),
                 const SizedBox(height: 16),
-                TimerDisplay(targetDateTime: DateTime(2026, 4, 10, 10, 05)),//punya kalaya
+                TimerDisplay(targetDateTime: DateTime(2026, 4, 14, 03, 08)),//punya kalaya
                 const SizedBox(height: 20),
                 AuruduTheme.glassContainer(
                   opacity: 0.15,

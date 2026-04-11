@@ -39,7 +39,7 @@ class Nakath7Screen extends StatelessWidget {
                 const SizedBox(height: 12),
                 const Text('ysi f;,a .Eu', style: AuruduTheme.titleGold),
                 const SizedBox(height: 16),
-                TimerDisplay(targetDateTime: DateTime(2026, 4, 10, 11, 00)),//hisathel gama
+                TimerDisplay(targetDateTime: DateTime(2026, 4, 15, 06, 55)),//hisathel gama
                 const SizedBox(height: 20),
                 AuruduTheme.glassContainer(
                   opacity: 0.15,

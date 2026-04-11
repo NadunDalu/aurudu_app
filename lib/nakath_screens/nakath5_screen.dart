@@ -39,7 +39,7 @@ class Nakath5Screen extends StatelessWidget {
                 const SizedBox(height: 12),
                 const Text('wdydr msiSu', style: AuruduTheme.titleGold),
                 const SizedBox(height: 16),
-                TimerDisplay(targetDateTime: DateTime(2026, 4, 10, 10, 30)),//ahara pisima
+                TimerDisplay(targetDateTime: DateTime(2026, 4, 14, 10, 51)),//ahara pisima
                 const SizedBox(height: 20),
                 AuruduTheme.glassContainer(
                   opacity: 0.15,
